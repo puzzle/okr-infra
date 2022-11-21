@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: registry.puzzle.ch/puzzle/okr
+          image: registry.puzzle.ch/yminder/puzzle-okr
           env:
             - name: SPRING_ACTIVE_PROFILES
               value: prod
@@ -36,20 +36,6 @@ spec:
                 secretKeyRef:
                   key: password
                   name: db-credentials
-          readinessProbe:
-            httpGet:
-              port: 8080
-              path: /health
-            initialDelaySeconds: 50
-            periodSeconds: 3
-            failureThreshold: 3
-          livenessProbe:
-            httpGet:
-              port: 8080
-              path: /health
-            initialDelaySeconds: 50
-            periodSeconds: 3
-            failureThreshold: 3
           ports:
             - containerPort: 8080
               name: http
