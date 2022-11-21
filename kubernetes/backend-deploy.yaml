@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: registry.puzzle.ch/yminder/puzzle-okr
+          image: registry.puzzle.ch/yminder/puzzle-okr:latest
           env:
             - name: SPRING_ACTIVE_PROFILES
               value: prod
