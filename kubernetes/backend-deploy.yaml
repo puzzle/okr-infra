@@ -5,6 +5,17 @@ metadata:
   name: backend
   labels:
     app: backend
+  annotations:
+    image.openshift.io/triggers: |-
+      [
+        {
+          "from": {
+            "kind": "ImageStreamTag",
+            "name": "okr-image-stream:latest"
+          },
+          "fieldPath": "spec.template.spec.containers[0].image"
+        }
+      ]
 spec:
   replicas: 1
   selector:
@@ -17,7 +28,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: registry.puzzle.ch/yminder/puzzle-okr:latest
+          image: okr-image-stream:latest
           env:
             - name: SPRING_ACTIVE_PROFILES
               value: prod
