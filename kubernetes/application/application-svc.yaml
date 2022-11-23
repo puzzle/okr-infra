@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: okr-application
 spec:
   selector:
     app: okr-application

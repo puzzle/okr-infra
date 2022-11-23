@@ -48,5 +48,6 @@ spec:
                   key: password
                   name: db-credentials
           ports:
-            - containerPort: 4200
-              name: http
+              - name: http
+                containerPort: 8080
+
