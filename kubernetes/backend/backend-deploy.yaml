@@ -11,7 +11,7 @@ metadata:
         {
           "from": {
             "kind": "ImageStreamTag",
-            "name": "okr-image-stream:latest"
+            "name": "okr-backend-image-stream:latest"
           },
           "fieldPath": "spec.template.spec.containers[0].image"
         }
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: okr-image-stream:latest
+          image: okr-frontend-image-stream:latest
           env:
             - name: SPRING_ACTIVE_PROFILES
               value: prod

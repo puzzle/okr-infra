@@ -1,0 +1,19 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: okr-frontend-image-stream
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - from:
+      kind: DockerImage
+      name: registry.puzzle.ch/yminder/puzzle-okr-frontend:latest
+      referencePolicy:
+        type: Source
+    name: latest
+    importPolicy:
+      scheduled: true
+      apiVersion: v1
+
+
