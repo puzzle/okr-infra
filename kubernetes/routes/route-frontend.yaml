@@ -10,5 +10,5 @@ spec:
     name: frontend
     weight: 100
   port:
-    targetPort: '8080'
+    targetPort: '4200'
   wildcardPolicy: None

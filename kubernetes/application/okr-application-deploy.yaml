@@ -2,16 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: okr-application
   labels:
-    app: backend
+    app: okr-application
   annotations:
     image.openshift.io/triggers: |-
       [
         {
           "from": {
             "kind": "ImageStreamTag",
-            "name": "okr-backend-image-stream:latest"
+            "name": "okr-application-image-stream:latest"
           },
           "fieldPath": "spec.template.spec.containers[0].image"
         }
@@ -20,15 +20,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: okr-application
   template:
     metadata:
       labels:
-        app: backend
+        app: okr-application
     spec:
       containers:
-        - name: backend
-          image: okr-frontend-image-stream:latest
+        - name: okr-application
+          image: okr-application-image-stream:latest
           env:
             - name: SPRING_ACTIVE_PROFILES
               value: prod
@@ -48,5 +48,5 @@ spec:
                   key: password
                   name: db-credentials
           ports:
-            - containerPort: 8080
+            - containerPort: 4200
               name: http
