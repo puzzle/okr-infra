@@ -5,17 +5,6 @@ metadata:
   name: okr-application
   labels:
     app: okr-application
-  annotations:
-    image.openshift.io/triggers: |-
-      [
-        {
-          "from": {
-            "kind": "ImageStreamTag",
-            "name": "okr-application-image-stream:latest"
-          },
-          "fieldPath": "spec.template.spec.containers[0].image"
-        }
-      ]
 spec:
   replicas: 1
   selector:
