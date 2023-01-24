@@ -6,9 +6,9 @@ spec:
   lookupPolicy:
     local: true
   tags:
-  - from:
+  - name: latest
+    from:
       kind: DockerImage
       name: registry.puzzle.ch/yminder/puzzle-okr:latest
-      referencePolicy:
-        type: Source
-    name: latest
+    referencePolicy:
+      type: Source
