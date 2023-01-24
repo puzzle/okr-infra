@@ -12,5 +12,3 @@ spec:
       referencePolicy:
         type: Source
     name: latest
-    importPolicy:
-      scheduled: true
