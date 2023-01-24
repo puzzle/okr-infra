@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: okr-application
-          image: okr-application-image-stream:latest
+          image: registry.puzzle.ch/yminder/puzzle-okr:latest
           env:
             - name: SPRING_ACTIVE_PROFILES
               value: prod
