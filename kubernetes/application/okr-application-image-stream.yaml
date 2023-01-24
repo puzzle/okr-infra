@@ -14,6 +14,3 @@ spec:
     name: latest
     importPolicy:
       scheduled: true
-      apiVersion: v1
-
-
