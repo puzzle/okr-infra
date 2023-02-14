@@ -25,17 +25,17 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: url
-                  name: db-credentials
+                  name: database-credentials
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
                   key: user
-                  name: db-credentials
+                  name: database-credentials
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: password
-                  name: db-credentials
+                  name: database-credentials
           ports:
               - name: http
                 containerPort: 8080
