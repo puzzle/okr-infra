@@ -5,6 +5,7 @@ metadata:
   namespace: pitc-okr-prod
   labels:
     argocd.argoproj.io/instance: pitc-okr-prod
+    public: 'true'
 spec:
   to:
     kind: Service
