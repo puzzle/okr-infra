@@ -2,13 +2,17 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: application
-  annotations:
-    openshift.io/host.generated: 'true'
+  namespace: pitc-okr-prod
+  labels:
+    argocd.argoproj.io/instance: pitc-okr-prod
 spec:
   to:
     kind: Service
     name: okr-application
-    weight: 100
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+    destinationCACertificate: ''
+  host: okr.ocp.cloudscale.puzzle.ch
   port:
-    targetPort: '8080'
-  wildcardPolicy: None
+    targetPort: http
