@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: staging-okr-application
+  namespace: pitc-okr-staging
+  labels:
+    argocd.argoproj.io/instance: pitc-okr-staging
+    public: 'true'
+spec:
+  to:
+    kind: Service
+    name: staging-okr-application
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  host: okr.ocp-staging.cloudscale.puzzle.ch
+  port:
+    targetPort: http
