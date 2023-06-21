@@ -13,6 +13,6 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-  host: okr.ocp-staging.cloudscale.puzzle.ch
+  host: okr.ocp-internal.cloudscale.puzzle.ch
   port:
     targetPort: http
