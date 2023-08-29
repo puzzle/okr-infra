@@ -36,6 +36,55 @@ spec:
                 secretKeyRef:
                   key: password
                   name: database-credentials
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI
+              value: http://staging-okr-oidc-mock:8000
           ports:
             - name: http
               containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oidc-provider-mock
+  labels:
+    app: oidc-provider-mock
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oidc-provider-mock
+  template:
+    metadata:
+      labels:
+        app: oidc-provider-mock
+    spec:
+      volumes:
+        - name: config
+          configMap:
+            name: config
+      containers:
+        - name: oidc-provider-mock
+          image: registry.puzzle.ch/puzzle/oidc-provider-mock:ff157478
+          command:
+            - sh
+            - "-c"
+            - "yarn install && yarn dev"
+          volumeMounts:
+            - name: config
+              mountPath: "/"
+          ports:
+            - name: http
+              containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: staging-okr-oidc-mock
+spec:
+  selector:
+    app: oidc-provider-mock
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8000
+      targetPort: http

@@ -1,0 +1,75 @@
+issuer_url: http://staging-okr-oidc-mock:8000
+
+clients:
+  - id: pitc_okr_prod
+    scope: "profile openid pitc preferred_username given_name family_name email"
+    redirect_uris:
+      - https://okr.ocp-staging.cloudscale.puzzle.ch/auth/keycloakopenid/callback
+
+people:
+  gl:
+    name: Geschäfts Leitung
+    preferred_username: gl
+    pitc:
+      uid: gl
+      roles:
+        - project_pitc_member
+        - smb_lehrlingswesen
+        - smb_swe
+        - puzzle
+        - sso-enabled
+        - defalut-roles-idp-members
+        - org_mobility
+    given_name: Geschäfts
+    family_name: Leitung
+    email: gl@gl.ch
+  bl:
+    name: bereichs leiter
+    preferred_username: bl
+    pitc:
+      uid: bl
+      roles:
+        - project_pitc_member
+        - smb_lehrlingswesen
+        - smb_swe
+        - puzzle
+        - sso-enabled
+        - defalut-roles-idp-members
+        - org_mobility
+    given_name: bereichs
+    family_name: leiter
+    email: bl@bl.ch
+
+    member:
+      name: Puzzle Member
+      preferred_username: member
+      pitc:
+        uid: member
+        roles:
+          - project_pitc_member
+          - smb_lehrlingswesen
+          - smb_swe
+          - puzzle
+          - sso-enabled
+          - defalut-roles-idp-members
+          - org_mobility
+      given_name: Puzzle
+      family_name: Member
+      email: member@member.ch
+
+    apprentice:
+      name: dev sys
+      preferred_username: dev
+      pitc:
+        uid: dev
+        roles:
+          - project_pitc_member
+          - smb_lehrlingswesen
+          - smb_swe
+          - puzzle
+          - sso-enabled
+          - defalut-roles-idp-members
+          - org_mobility
+      given_name: dev
+      family_name: sys
+      email: apprentice@dev.ch
