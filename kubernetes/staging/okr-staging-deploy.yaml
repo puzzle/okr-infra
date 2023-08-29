@@ -68,7 +68,7 @@ spec:
           command:
             - sh
             - "-c"
-            - "yarn install && yarn dev"
+            - "yarn dev"
           volumeMounts:
             - name: config
               mountPath: "/tmp/"
