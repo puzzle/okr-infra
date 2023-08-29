@@ -71,10 +71,13 @@ spec:
             - "yarn install && yarn dev"
           volumeMounts:
             - name: config
-              mountPath: "/"
+              mountPath: "/tmp/"
           ports:
             - name: http
               containerPort: 8000
+          env:
+            - name: CONFIG_FILE_PATH
+              value: /tmp/config.yaml
 ---
 apiVersion: v1
 kind: Service
