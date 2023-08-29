@@ -64,11 +64,7 @@ spec:
             name: config
       containers:
         - name: oidc-provider-mock
-          image: registry.puzzle.ch/puzzle/oidc-provider-mock:ff157478
-          command:
-            - sh
-            - "-c"
-            - "yarn dev"
+          image: registry.puzzle.ch/puzzle/oidc-provider-mock:d4ae14c1
           volumeMounts:
             - name: config
               mountPath: "/tmp/"
