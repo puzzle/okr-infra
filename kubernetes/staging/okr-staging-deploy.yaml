@@ -19,8 +19,8 @@ spec:
         - name: staging-okr-application
           image: registry.puzzle.ch/puzzle/okr:1.0.18-STAGING
           env:
-            - name: SPRING_ACTIVE_PROFILES
-              value: dev
+            - name: SPRING_PROFILES_ACTIVE
+              value: staging
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 secretKeyRef:
