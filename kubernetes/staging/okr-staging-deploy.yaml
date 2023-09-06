@@ -67,7 +67,7 @@ spec:
           image: registry.puzzle.ch/puzzle/okr:1.0.27-STAGING
           volumeMounts:
             - name: config
-              mountPath: "/tmp/"
+              mountPath: "/tmp/config.yaml"
           ports:
             - name: http
               containerPort: 8000
