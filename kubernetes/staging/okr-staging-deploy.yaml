@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: staging-okr-application
-          image: registry.puzzle.ch/puzzle/okr:1.0.20-STAGING
+          image: registry.puzzle.ch/puzzle/okr:1.0.27-STAGING
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: staging
@@ -64,7 +64,7 @@ spec:
             name: config
       containers:
         - name: oidc-provider-mock
-          image: registry.puzzle.ch/puzzle/oidc-provider-mock:d4ae14c1
+          image: registry.puzzle.ch/puzzle/okr:1.0.27-STAGING
           volumeMounts:
             - name: config
               mountPath: "/tmp/"
@@ -87,3 +87,7 @@ spec:
       protocol: TCP
       port: 8000
       targetPort: http
+  template:
+    spec:
+      containers:
+        - image: registry.puzzle.ch/puzzle/okr:1.0.27-STAGING
