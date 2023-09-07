@@ -36,7 +36,7 @@ spec:
                 secretKeyRef:
                   key: password
                   name: database-credentials
-            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI
               value: http://staging-okr-oidc-mock:8000
           ports:
             - name: http
