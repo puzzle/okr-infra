@@ -38,6 +38,8 @@ spec:
                   name: database-credentials
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI
               value: http://staging-okr-oidc-mock:8000
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI
+              value: http://staging-okr-oidc-mock:8000
           ports:
             - name: http
               containerPort: 8080
