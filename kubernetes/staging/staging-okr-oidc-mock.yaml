@@ -23,7 +23,7 @@ spec:
         - name: oidc-provider-mock
           image: registry.puzzle.ch/puzzle/oidc-provider-mock:d4ae14c1
           volumeMounts:
-            - name: config
+            - name: config-volume
               mountPath: "/tmp/config"
           ports:
             - name: http
