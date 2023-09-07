@@ -16,7 +16,7 @@ spec:
         app: oidc-provider-mock
     spec:
       volumes:
-        - name: config
+        - name: config-volume
           configMap:
             name: config
       containers:
@@ -24,10 +24,10 @@ spec:
           image: registry.puzzle.ch/puzzle/oidc-provider-mock:d4ae14c1
           volumeMounts:
             - name: config
-              mountPath: "/tmp/config.yaml"
+              mountPath: "/tmp/config"
           ports:
             - name: http
               containerPort: 8000
           env:
             - name: CONFIG_FILE_PATH
-              value: /tmp/config.yaml
+              value: /tmp/config/config.yaml
