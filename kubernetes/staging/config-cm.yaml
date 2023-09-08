@@ -1,13 +1,13 @@
 apiVersion: v1
 data:
   config.yaml: |
-    issuer_url: http://staging-okr-oidc-mock:8000
+    issuer_url: https://staging-okr-oidc-mock:8000
 
     clients:
       - id: pitc_okr_prod
         scope: "profile openid pitc preferred_username given_name family_name email"
         redirect_uris:
-          - https://okr.ocp-staging.cloudscale.puzzle.ch/auth/keycloakopenid/callback
+          - https://okr.ocp-staging.cloudscale.puzzle.ch:/auth/keycloakopenid/callback
 
     people:
       gl:
