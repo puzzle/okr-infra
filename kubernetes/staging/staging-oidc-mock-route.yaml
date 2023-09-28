@@ -12,6 +12,6 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-  host: idp.okr.ocp-internal.cloudscale.puzzle.ch
+  host: idp-mock-okr.ocp-internal.cloudscale.puzzle.ch
   port:
     targetPort: http
