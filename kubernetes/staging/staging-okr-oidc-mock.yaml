@@ -27,7 +27,7 @@ spec:
               mountPath: "/tmp/config"
           ports:
             - name: http
-              containerPort: 8000
+              containerPort: 8080
           env:
             - name: CONFIG_FILE_PATH
               value: /tmp/config/config.yaml
