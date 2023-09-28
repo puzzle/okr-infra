@@ -36,6 +36,10 @@ spec:
                 secretKeyRef:
                   key: password
                   name: database-credentials
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI
+              value: https://idp-mock-okr.ocp-internal.cloudscale.puzzle.ch/
+            - name: OAUTH_SCOPE
+              value: profile openid pitc preferred_username given_name family_name email
           ports:
             - name: http
               containerPort: 8080
