@@ -21,6 +21,8 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: staging
+            - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
+              value: debug
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 secretKeyRef:
