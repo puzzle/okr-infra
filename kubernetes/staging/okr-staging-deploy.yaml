@@ -19,6 +19,8 @@ spec:
         - name: staging-okr-application
           image: registry.puzzle.ch/puzzle/okr:1.0.66-STAGING
           env:
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI
+              value: https://idp-mock-okr.ocp-internal.cloudscale.puzzle.ch/jwks
             - name: SPRING_PROFILES_ACTIVE
               value: staging
             - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
