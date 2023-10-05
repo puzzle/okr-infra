@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: staging-okr-keycloak
+spec:
+  selector:
+    app: staging-okr-keycloak
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: http

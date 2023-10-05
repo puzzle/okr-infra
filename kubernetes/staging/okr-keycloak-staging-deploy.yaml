@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staging-okr-keycloak
+  labels:
+    app: staging-okr-keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: staging-okr-keycloak
+  template:
+    metadata:
+      labels:
+        app: staging-okr-keycloak
+    spec:
+      containers:
+        - name: keycloak
+          image: quay.io/keycloak/keycloak:latest
+          ports:
+            - name: http
+              containerPort: 8080
