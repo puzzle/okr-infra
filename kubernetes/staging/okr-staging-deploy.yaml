@@ -23,6 +23,26 @@ spec:
               value: staging
             - name: LOGGING_LEVEL_ORG_SPRINGFRAMEWORK
               value: debug
+            - name: SPRING_LDAP_URLS
+              valueFrom:
+                secretKeyRef:
+                  key: url
+                  name: ldap-credentials
+            - name: SPRING_LDAP_BASE
+              valueFrom:
+                secretKeyRef:
+                  key: base
+                  name: ldap-credentials
+            - name: SPRING_LDAP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: ldap-credentials
+            - name: SPRING_LDAP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: ldap-credentials
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 secretKeyRef:
