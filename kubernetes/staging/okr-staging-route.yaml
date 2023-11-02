@@ -5,6 +5,7 @@ metadata:
   namespace: pitc-okr-staging
   labels:
     argocd.argoproj.io/instance: pitc-okr-staging
+    public: true
 spec:
   to:
     kind: Service
@@ -12,6 +13,6 @@ spec:
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
-  host: okr.ocp-internal.cloudscale.puzzle.ch
+  host: okr-stag.ocp.cloudscale.puzzle.ch
   port:
     targetPort: http

@@ -59,9 +59,9 @@ spec:
                   key: password
                   name: database-credentials
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI
-              value: https://idp-mock-okr.ocp-internal.cloudscale.puzzle.ch/realms/pitc
+              value: https://idp-mock-okr.ocp.cloudscale.puzzle.ch/realms/pitc
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI
-              value: https://idp-mock-okr.ocp-internal.cloudscale.puzzle.ch/realms/pitc/protocol/openid-connect/certs
+              value: https://idp-mock-okr.ocp.cloudscale.puzzle.ch/realms/pitc/protocol/openid-connect/certs
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_OPAQUETOKEN_CLIENT-ID
               value: pitc_okr_staging
           ports:
