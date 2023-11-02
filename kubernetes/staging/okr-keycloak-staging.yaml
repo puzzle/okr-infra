@@ -22,7 +22,7 @@ items:
         description: Route for application's service.
       labels:
         application: staging-keycloak
-        public: true
+        public: 'true'
       name: staging-keycloak
     spec:
       host: idp-mock-okr.ocp.cloudscale.puzzle.ch

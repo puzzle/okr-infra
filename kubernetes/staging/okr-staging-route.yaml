@@ -5,7 +5,7 @@ metadata:
   namespace: pitc-okr-staging
   labels:
     argocd.argoproj.io/instance: pitc-okr-staging
-    public: true
+    public: 'true'
 spec:
   to:
     kind: Service
