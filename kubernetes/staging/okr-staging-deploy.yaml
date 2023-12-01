@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: staging-okr-application
-          image: registry.puzzle.ch/puzzle/okr:1.0.182-STAGING
+          image: registry.puzzle.ch/puzzle/okr:1.0.183-STAGING
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: staging
