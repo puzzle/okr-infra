@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: okr-application
-          image: registry.puzzle.ch/puzzle/okr:1.0.2-Prod
+          image: registry.puzzle.ch/puzzle/okr:2.0.4-PROD-Release 
           env:
-            - name: SPRING_ACTIVE_PROFILES
+            - name: SPRING_PROFILES_ACTIVE
               value: prod
             - name: SPRING_DATASOURCE_URL
               valueFrom:
