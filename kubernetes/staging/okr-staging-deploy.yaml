@@ -63,7 +63,7 @@ spec:
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI
               value: https://sso.puzzle.ch/auth/realms/pitc/protocol/openid-connect/certs
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_OPAQUETOKEN_CLIENT-ID
-              value: pitc_okr_prod
+              value: pitc_okr_staging
             - name: OKR_USER_CHAMPION_USERNAMES
               valueFrom:
                 secretKeyRef:
